@@ -19,7 +19,7 @@ public class BreadthFirstSearch {
         adj.get(v).add(u);
     }
 
-    /** BFS traversal order starting from `start`. */
+    /** hw.assignment1.BFS traversal order starting from `start`. */
     public List<Integer> bfs(int start) {
         boolean[] visited = new boolean[n];
         Queue<Integer> queue = new ArrayDeque<>();
@@ -111,7 +111,7 @@ public class BreadthFirstSearch {
         g.addEdge(2, 5);
         g.addEdge(4, 6);
 
-        System.out.println("BFS order:          " + g.bfs(0));
+        System.out.println("hw.assignment1.BFS order:          " + g.bfs(0));
         System.out.println("Distances from 0:   " + Arrays.toString(g.bfsDistances(0)));
         System.out.println("Shortest path 0->6: " + g.shortestPath(0, 6));
     }

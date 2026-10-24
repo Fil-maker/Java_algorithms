@@ -1,4 +1,4 @@
-Main
+hw.assignment1.FastSort
 
 TypesDemo
 Calculator

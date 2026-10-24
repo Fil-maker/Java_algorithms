@@ -101,7 +101,7 @@ public class MazeApp {
         m.grid[m.rows - 1][m.cols - 2] = 0;
         return m;
     }
-    /** Проверка, что все проходы достижимы из одного (BFS). */
+    /** Проверка, что все проходы достижимы из одного (hw.assignment1.BFS). */
     static boolean allReachable(Maze m) {
         int total = 0, sx = -1, sy = -1;
         for (int y = 0; y < m.rows; y++)
@@ -134,13 +134,13 @@ public class MazeApp {
     }
 
     /**
-     * BFS-поиск кратчайшего пути между двумя точками сетки.
+     * hw.assignment1.BFS-поиск кратчайшего пути между двумя точками сетки.
      *
      * Возвращает список координат {x, y} от старта до финиша включительно,
      * либо null, если старт/финиш — стены или путь не существует.
      *
      * Работает по сетке лабиринта: проход — это grid[y][x] == 0.
-     * Так как BFS обходит узлы «волной» по уровням, найденный путь
+     * Так как hw.assignment1.BFS обходит узлы «волной» по уровням, найденный путь
      * гарантированно кратчайший (по числу шагов).
      */
     static List<int[]> findPath(Maze m, int sx, int sy, int ex, int ey) {
@@ -156,7 +156,7 @@ public class MazeApp {
         // vis[y][x] — была ли клетка уже добавлена в очередь (защита от повторной обработки).
         boolean[][] vis = new boolean[m.rows][m.cols];
 
-        // Очередь BFS. Храним пары {x, y}.
+        // Очередь hw.assignment1.BFS. Храним пары {x, y}.
         Deque<int[]> q = new ArrayDeque<>();
         q.add(new int[]{sx, sy});
         vis[sy][sx] = true;
@@ -164,7 +164,7 @@ public class MazeApp {
         // Четыре направления обхода: вправо, влево, вниз, вверх.
         final int[][] dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
 
-        // Основной цикл BFS: обрабатываем клетки «слой за слоем».
+        // Основной цикл hw.assignment1.BFS: обрабатываем клетки «слой за слоем».
         while (!q.isEmpty()) {
             int[] c = q.poll();
 
